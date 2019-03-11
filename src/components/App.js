@@ -10,11 +10,13 @@ const App = () => (
   // wrap the main component inside browserRouter tags
   // exact ensures that it only renders the component when the url fully matches
 
+  // use render() when you want to pass props to the component
+
   <BrowserRouter>
     <div className="container">
       <Header />
       <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
+      <Route path="/about" render={()=> <About title="about"/>}/>
       <Route path="/courses" component={Courses}/>
       <Route path="/teachers" component={Teachers}/>
     </div> 
